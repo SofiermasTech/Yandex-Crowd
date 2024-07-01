@@ -70,6 +70,10 @@
          outline: 3px solid var(--color-outline);
       }
 
+      &__link-left:visited {
+         color: #fff !important;
+      }
+
       @include desktop-bottom {
          width: 100%;
       }
@@ -81,7 +85,7 @@
 
    &__link-left {
       background-color: var(--color-dark-btn);
-      color: #fff;
+      color: #fff !important;
 
       @include hover {
          background-color: var(--color-yellow-btn);

@@ -18,7 +18,11 @@ let currentCountNumber = 3;
 
 // Шаг слайдера
 function rollSliderPlayers() {
-   sliderLinePlayers.style.transform = 'translate(-' + countPlayers * (widthPlayers + 20) + 'px)';
+   if (document.documentElement.clientWidth < 992) {
+      sliderLinePlayers.style.transform = 'translate(-' + countPlayers * (widthPlayers + 20) + 'px)';
+   } else {
+      sliderLinePlayers.style.transform = 'translate(-' + countPlayers * (widthPlayers + 30) + 'px)';
+   }
 }
 
 function checkDisabled(buttons) {
@@ -98,6 +102,53 @@ btnNext.forEach(btn => {
       checkDisabled(btnPrev);
    })
 })
+
+function startAutoSlider() {
+   if (document.documentElement.clientWidth < 992) {
+      if (countPlayers === slideLengthPlayers.length) {
+         countPlayers = 0;
+         currentCountNumber = 1;
+         currentNumber.textContent = currentCountNumber;
+      }
+   } else {
+      if (countPlayers === slideLengthPlayers.length - 2) {
+         countPlayers = 0;
+         currentCountNumber = 3;
+         currentNumber.textContent = currentCountNumber;
+      }
+   }
+}
+
+let autoSlider = setInterval(function () {
+   countPlayers++;
+   currentCountNumber += 1;
+   currentNumber.textContent = currentCountNumber;
+
+   startAutoSlider();
+
+   rollSliderPlayers();
+   checkDisabled(btnPrev);
+
+}, 4000);
+
+//Отслеживание фокуса на слайдере
+sliderLinePlayers.addEventListener('mouseenter', () => {
+   clearInterval(autoSlider);
+});
+
+sliderLinePlayers.addEventListener('mouseleave', () => {
+   autoSlider = setInterval(function() {
+      countPlayers++;
+      currentCountNumber += 1;
+      currentNumber.textContent = currentCountNumber;
+
+      startAutoSlider();
+
+      rollSliderPlayers();
+      checkDisabled(btnPrev);
+
+   }, 4000);
+});
 
 
 // Второй слайдер на мобилках 'section-steps'

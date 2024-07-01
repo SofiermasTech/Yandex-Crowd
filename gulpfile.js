@@ -109,7 +109,7 @@ function cleaning() {
 function building() {
    return src([
       'src/css/style.min.css',
-      'src/images/*.*',
+      'src/images/dist/*.*',
       '!src/images/dist/*.svg',
       // 'src/images/dist/sprite.svg',
       'src/fonts/*.*',
