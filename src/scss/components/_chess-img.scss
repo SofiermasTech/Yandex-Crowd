@@ -1,0 +1,22 @@
+.chess-img {
+   position: absolute;
+   bottom: 78px;
+   right: 329px;
+   animation: chess-step 3s ease-in-out infinite;
+
+   @include desktop {
+      bottom: 78px;
+      right: 63px;
+   }
+
+   @include tablet {
+      display: none;
+   }
+}
+
+
+@keyframes chess-step {
+   100% {
+      transform: translateX(-100%);
+   }
+}

@@ -1,0 +1,106 @@
+.section-intro {
+   padding-top: 35px;
+   padding-bottom: 100px;
+   flex-grow: 1;
+
+   @include mobile {
+      padding-top: 24px;
+   }
+
+   & .ticker-line {
+      bottom: -130px;
+   }
+
+   &__content {
+      max-width: 542px;
+
+      @include desktop-bottom {
+         max-width: 450px;
+      }
+
+      @include tablet {
+         max-width: 335px;
+      }
+   }
+
+   &__title {
+      display: block;
+      @include fluid-text(60, 36);
+      font-family: var(--text-font-family-accent);
+      line-height: 1.1;
+
+      @include desktop {
+         line-height: 1.15;
+      }
+   }
+
+   &__subtitle {
+      margin: 24px 0 0;
+      text-align: center;
+      font-size: 18px;
+
+      @include mobile {
+         margin-top: 18px;
+         text-align: left;
+      }
+   }
+
+   &__link-wrap {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      text-align: center;
+
+      @include desktop-bottom {
+         flex-direction: column;
+      }
+   }
+
+   &__link-left,
+   &__link-right {
+      padding: var(--padding-btn-large);
+      border-radius: var(--border-radius-btn);
+      width: 263px;
+      font-size: 16px;
+      transition: 0.3s;
+
+
+      &focus,
+      &:focus {
+         outline: 3px solid var(--color-outline);
+      }
+
+      @include desktop-bottom {
+         width: 100%;
+      }
+
+      @include mobile {
+         padding-block: 12px;
+      }
+   }
+
+   &__link-left {
+      background-color: var(--color-dark-btn);
+      color: #fff;
+
+      @include hover {
+         background-color: var(--color-yellow-btn);
+         color: var(--color-dark-btn);
+      }
+   }
+
+   &__link-right {
+      border: 2px solid var(--color-dark-btn);
+      padding-inline: 50px;
+
+      @include hover {
+         background-color: var(--color-dark-btn);
+         color: var(--background-color-white);
+      }
+
+      @include tablet {
+         background-color: rgba(255, 255, 255, 0.9);
+         border: none;
+      }
+   }
+}

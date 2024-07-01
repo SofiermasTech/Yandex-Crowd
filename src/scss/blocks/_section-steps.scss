@@ -1,0 +1,192 @@
+.section-steps {
+   padding-bottom: var(--padding-section-big);
+   position: relative;
+   display: flex;
+   flex-direction: column;
+
+   @include mobile {
+      align-items: center;
+      padding-bottom: 110px;
+   }
+
+   &__head {
+      max-width: 806px;
+      margin-bottom: 65px;
+
+      @include mobile {
+         margin-bottom: 140px;
+      }
+   }
+
+   &__title {
+      display: inline;
+
+      &:focus {
+         outline: 3px solid var(--color-outline);
+      }
+   }
+
+   &__subtitle {
+      display: inline-block;
+      max-width: 280px;
+      color: var(--color-link);
+      vertical-align: middle;
+
+      @include mobile {
+         display: block;
+         max-width: 100%;
+         margin-top: 12px;
+      }
+   }
+
+   &__cards {
+      position: relative;
+
+      @include mobile {
+         margin-bottom: 30px;
+         width: 335px;
+         overflow: hidden;
+         background: url('../../images/dist/steps-background.webp') no-repeat;
+         padding: 49px 20px;
+      }
+   }
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 28% 28% 34%;
+      grid-auto-flow: row;
+      gap: 23px;
+      grid-template-areas:
+         "text1 text2 text3"
+         "text4 text5 text3"
+         "text6 text7 text7";
+
+
+      @include tablet {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: repeat(5, minmax(130px, 180px));
+         grid-template-areas:
+            "text1 text2"
+            "text3 text3"
+            "text4 text5"
+            "text6 text6"
+            "text7 text7";
+      }
+
+      @include mobile {
+         position: relative;
+         left: 0;
+         grid-template-columns: repeat(5, 295px);
+         grid-template-rows: repeat(2, minmax(85px, 95px));
+         grid-auto-flow: column;
+         grid-template-areas:
+            "text1 text3 text4 text6 text7"
+            "text2 text3 text5 text6 text7";
+         gap: 10px 34px;
+      }
+   }
+
+   &__item {
+      background: url('../../images/dist/steps-background.webp') no-repeat;
+      background-size: cover;
+      padding: 18px 6px 20px 14px;
+      display: flex;
+      column-gap: 16px;
+      width: auto;
+      transition: 0.2s;
+
+      @include hover {
+         transform: scale(1.03);
+       }
+
+      @include tablet {
+         padding: 20px 12px 20px 20px;
+      }
+
+      @include mobile {
+         background: none;
+         width: 100%;
+         padding: 0;
+      }
+
+      p {
+         font-weight: 500;
+      }
+   }
+
+   &__item-number {
+      padding: 5px 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--background-color-white);
+      font-weight: 600;
+      text-align: center;
+   }
+
+   &__img {
+      max-width: 375px;
+      position: absolute;
+      right: -38px;
+      bottom: 210px;
+
+      @include desktop-bottom {
+         max-width: 335px;
+         bottom: 95px;
+      }
+
+      @include tablet {
+         right: 0;
+      }
+
+      @include mobile {
+         bottom: 58%;
+         right: calc(50% - 170px);
+      }
+
+      @include mobile-bottom {
+         bottom: 54%;
+      }
+   }
+
+   &__slider-btn {
+      display: none;
+
+      @include mobile {
+         display: flex;
+      }
+   }
+}
+
+.text-1 {
+   grid-area: text1;
+}
+
+.text-2 {
+   grid-area: text2;
+}
+
+.text-3 {
+   grid-area: text3;
+}
+
+.text-4 {
+   grid-area: text4;
+}
+
+.text-5 {
+   grid-area: text5;
+}
+
+.text-6 {
+   grid-area: text6;
+}
+
+.text-7 {
+   grid-area: text7;
+
+   & p {
+      max-width: 417px;
+   }
+}

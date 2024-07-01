@@ -1,0 +1,48 @@
+.ticker-line {
+   position: relative;
+   overflow: hidden;
+   background-color: var(--color-accent-red);
+
+   &__wrap {
+      display: flex;
+      padding: 18px 0;
+      margin: 0;
+      animation: ticker-line 20s linear infinite;
+
+      @include mobile {
+         padding: 12px 0;
+      }
+   }
+
+   &__item {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-family: var(--text-font-family-accent);
+      font-size: 22px;
+      color: var(--background-color-white);
+      text-transform: uppercase;
+      margin: 0;
+
+      @include mobile {
+         font-size: 16px;
+      }
+   }
+
+   &__item-bullet {
+      display: inline;
+      color: inherit;
+      font-size: inherit;
+      padding-inline: 20px;
+   }
+}
+
+
+@keyframes ticker-line {
+   0% {
+      transform: translateZ(0);
+   }
+
+   100% {
+      transform: translate3d(-100%, 0, 0);
+   }
+}

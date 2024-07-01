@@ -1,0 +1,81 @@
+.slider-btn {
+   display: flex;
+   align-items: center;
+   text-align: center;
+
+   &__next,
+   &__prev {
+      background-color: var(--color-base-text);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      padding: 12px 0;
+      margin-inline: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:focus {
+         outline: 3px solid var(--color-outline);
+      }
+
+      @include hover {
+         background-color: var(--color-yellow-btn);
+        }
+
+      @include mobile {
+         width: 36px;
+         height: 36px;
+         padding: 7px 0;
+      }
+   }
+
+   svg {
+      color: var(--background-color-white);
+      height: 20px;
+      width: 10px;
+
+      @include mobile {
+         height: 14px;
+         width: 8px;
+      }
+   }
+
+   &__pagination-circle {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-color: var(--color-grey-btn);
+      border-radius: 50%;
+      margin-inline: 2px;
+   }
+
+   &--top {
+
+      @include mobile {
+         display: none;
+      }
+   }
+
+   &--bottom {
+      display: none;
+
+      @include mobile {
+         display: flex;
+      }
+   }
+
+   &__count {
+      font-size: 16px;
+      padding-inline: 6px;
+   }
+
+   &__count-split {
+      color: var(--color-base-text-opacity);
+   }
+
+   &__count-all {
+      color: var(--color-base-text-opacity);
+   }
+}

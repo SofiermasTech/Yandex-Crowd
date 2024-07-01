@@ -1,0 +1,7 @@
+.header {
+   padding-block: 26px;
+
+   @include mobile {
+      padding-block: 18px;
+   }
+}

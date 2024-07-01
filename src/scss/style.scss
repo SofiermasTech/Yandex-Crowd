@@ -1,0 +1,15 @@
+@import  'normalize', 'fonts',  'global', 'utils', 'mixin', 'media', 'variables';
+
+@import 'components/logo';
+@import 'components/chess-img';
+@import 'components/ticker-line';
+@import 'components/table';
+@import 'components/slider-btn';
+
+@import 'blocks/section-background-intro';
+@import 'blocks/header';
+@import 'blocks/section-intro';
+@import 'blocks/section-event';
+@import 'blocks/section-steps';
+@import 'blocks/section-players';
+@import 'blocks/footer';

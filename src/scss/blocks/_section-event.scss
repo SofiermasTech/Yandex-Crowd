@@ -1,0 +1,149 @@
+.section-event {
+   padding-top: var(--padding-section-small);
+   padding-bottom: 160px;
+
+   @include tablet-bottom {
+      padding-top: 45px;
+      padding-bottom: 110px;
+   }
+
+   &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 60px;
+
+      @include tablet-bottom {
+         justify-content: center;
+         margin-bottom: 35px;
+      }
+
+      & .section-event__img {
+         max-width: 395px;
+         flex-shrink: 0;
+
+         @include tablet-bottom {
+            display: none;
+         }
+      }
+   }
+
+   &__head-text {
+      max-width: 755px;
+      display: inline-block;
+
+      &:focus {
+         outline: 3px solid var(--color-outline);
+      }
+
+      @include desktop {
+         max-width: 715px;
+      }
+
+      @include tablet-bottom {
+         max-width: 595px;
+         display: flex;
+         flex-direction: column;
+         row-gap: 25px;
+      }
+
+      @include mobile-bottom {
+         max-width: 330px;
+      }
+
+      strong {
+         color: var(--color-accent-red);
+      }
+
+      img {
+         display: none;
+         max-width: 335px;
+         width: 100%;
+         object-fit: contain;
+         object-position: center;
+
+         @include tablet-bottom {
+            display: block;
+            align-self: center;
+            height: auto;
+         }
+      }
+   }
+
+   &__img img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+
+   &__body {
+      display: grid;
+      grid-template-columns: 40% 54%;
+      grid-template-rows: 30% 68%;
+      grid-template-areas:
+         "img text"
+         "img table";
+      column-gap: 80px;
+      row-gap: 50px;
+
+      @include desktop {
+         grid-template-columns: 40% 59%;
+         column-gap: 20px;
+      }
+
+      @include tablet-bottom {
+         grid-template-columns: 1fr;
+         grid-template-rows: auto auto auto;
+         grid-template-areas:
+            "img"
+            "text"
+            "table";
+      }
+
+      @include mobile {
+         row-gap: 24px;
+      }
+
+      & .section-event__img {
+         grid-area: img;
+         max-width: 475px;
+
+         img {
+            aspect-ratio: 5 / 6;
+            object-fit: contain;
+            object-position: center;
+
+            @include mobile {
+               max-width: 335px;
+               max-height: 406px;
+            }
+         }
+
+         @include tablet-bottom {
+            justify-self: center;
+         }
+
+
+      }
+   }
+
+   &__body-text {
+      grid-area: text;
+      max-width: 655px;
+
+      &:focus {
+         outline: 3px solid var(--color-outline);
+      }
+
+      strong {
+         color: var(--color-accent-red);
+      }
+   }
+
+   &__info-table {
+      @include mobile {
+         justify-self: center;
+      }
+   }
+}

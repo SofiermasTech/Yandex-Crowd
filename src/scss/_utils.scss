@@ -1,0 +1,72 @@
+@import 'mixin', 'media';
+
+.container {
+   max-width: 1222px;
+   padding-inline: var(--padding-content-inline);
+   margin-inline: auto;
+   box-sizing: content-box;
+
+   @include desktop-bottom {
+      max-width: 960px;
+   }
+
+   @include tablet {
+      max-width: 720px;
+   }
+
+   @include tablet-bottom {
+      width: 100%;
+      box-sizing: border-box;
+   }
+}
+
+.visually-hidden {
+   position: absolute !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   width: 1px !important;
+   height: 1px !important;
+   white-space: nowrap !important;
+   -webkit-clip-path: inset(100%) !important;
+   clip-path: inset(100%) !important;
+   clip: rect(0 0 0 0) !important;
+   overflow: hidden !important;
+}
+
+.title,
+.subtitle {
+   font-weight: 400;
+   margin: 0;
+   vertical-align: middle;
+   text-align: left;
+   text-transform: uppercase;
+   color: inherit;
+}
+
+.subtitle {
+   @include fluid-text(38, 28);
+
+   @include mobile {
+      line-height: 1.35;
+   }
+}
+
+.title {
+   @include fluid-text(60, 36);
+}
+
+.display-inline-table {
+   @include mobile {
+      display: flex;
+      flex-direction: row !important;
+     align-items: center;
+   }
+}
+
+.btn-disable {
+   background-color: var(--color-grey-btn) !important;
+}
+
+.active-slide {
+   background-color: var(--color-base-text) !important;
+}

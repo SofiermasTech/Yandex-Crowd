@@ -1,0 +1,19 @@
+.section-background-intro {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   min-height: 765px;
+   background-image: url('../../images/dist/intro-back.webp');
+   background-color: rgba(233, 222, 212, 0.8);
+   background-position: top -116px center;
+   background-repeat: no-repeat;
+   display: flex;
+   flex-direction: column;
+   
+   @include mobile {
+      background-image: url('../../images/dist/intro-back-mobile.webp');
+      background-size: cover;
+      background-position: bottom right -122px;
+      min-height: 816px;
+   }
+}

@@ -1,0 +1,114 @@
+.section-players {
+   padding-bottom: 110px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   @include mobile {
+      padding-bottom: 100px;
+   }
+
+   &__cards {
+      padding-bottom: 55px;
+
+      @include mobile {
+         padding-bottom: 37px;
+      }
+   }
+
+   &__head {
+      width: 100%;
+      margin-bottom: 45px;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 20px;
+
+      @include mobile {
+         margin-bottom: 42px;
+      }
+
+      h2:focus {
+         outline: 3px solid var(--color-outline);
+      }
+   }
+}
+
+.slider {
+   max-width: 1220px;
+   margin-inline: auto;
+   overflow: hidden;
+   padding-block: 15px;
+
+   @include tablet {
+      max-width: 720px;
+   }
+
+   @include mobile {
+      max-width: 335px;
+   }
+
+   &__wrapper {
+      display: flex;
+      justify-content: space-around;
+      column-gap: 20px;
+      // padding-inline: 15px;
+      position: relative;
+      left: 0;
+      transition: all ease 1s;
+   }
+
+   &__slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-inline: 38px;
+      flex-shrink: 0;
+      transition: 0.2s;
+
+      @include hover {
+         transform: scale(1.03);
+      }
+
+      @include tablet {
+         padding-inline: 9px;
+      }
+
+      img {
+         @include tablet {
+            width: 244px;
+            height: 244px;
+         }
+      }
+
+      h3 {
+         margin: 25px 0 6px;
+         font-size: 24px;
+         font-weight: 600;
+      }
+
+      p {
+         margin-bottom: 20px;
+         color: var(--color-base-text-opacity);
+      }
+
+      a {
+         display: inline-block;
+         padding: 10px 14px;
+         font-size: 16px;
+         color: var(--color-link);
+         border: 1px solid var(--color-link);
+         border-radius: var(--border-radius-btn);
+
+         &:focus {
+            outline: 3px solid var(--color-outline);
+         }
+
+         @include hover {
+            background-color: var(--color-link);
+            color: var(--background-color-white);
+         }
+      }
+
+   }
+}

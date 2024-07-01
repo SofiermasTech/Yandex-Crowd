@@ -1,0 +1,85 @@
+.table {
+   grid-area: table;
+   text-align: left;
+
+   @include mobile {
+      padding-top: 20px;
+   }
+
+   tr {
+      @include mobile {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   thead th,
+   thead td {
+      padding-top: 0;
+   }
+
+   thead td {
+      @include mobile {
+         padding-top: 11px;
+      }
+   }
+
+   th,
+   td {
+      border-bottom: 1px solid var(--color-grey-table-border);
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      @include mobile {
+         height: auto;
+      }
+   }
+
+   th {
+      border-right: 1px solid var(--color-grey-table-border);
+      color: var(--color-base-text-opacity);
+      font-weight: 400;
+      width: 335px;
+
+      @include mobile {
+         border: none;
+         padding-bottom: 0;
+      }
+   }
+
+   td {
+      font-weight: 600;
+      width: 360px;
+      padding-left: 16px;
+
+      @include mobile {
+         padding-left: 0;
+         padding-top: 12px;
+         width: 100%;
+      }
+   }
+
+   tfoot th,
+   tfoot td {
+      padding-bottom: 0;
+      border-bottom: none;
+   }
+
+   &__caption {
+      caption-side: bottom;
+      margin-top: 45px;
+      text-align: left;
+      color: var(--color-link);
+
+      @include mobile {
+         margin-top: 33px;
+      }
+   }
+
+   & s {
+      display: inline-block;
+      margin-right: 5px;
+      text-decoration-color: var(--color-accent-red);
+      text-decoration-thickness: 2px;
+   }
+}
