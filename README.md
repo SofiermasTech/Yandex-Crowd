@@ -16,4 +16,4 @@
 ### Что можно доработать
 - [ ] Анимацию появления блоков при скролле;
 
-### Gh-Pages: [https://sofiermastech.github.io/mesto/]
+### Gh-Pages: (https://sofiermastech.github.io/Yandex-Crowd-CSS/)
