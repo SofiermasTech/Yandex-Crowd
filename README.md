@@ -1,7 +1,6 @@
 # Страница клуба "Четырех коней"
+![image](https://github.com/SofiermasTech/Yandex-Crowd/assets/112267778/bd930291-1880-4125-bb0c-89592fa35cbc)
 Задание для Yandex-Crowd
-
-
 
 ### Что сделано
 - Верстка блоков по макету из Figma;
